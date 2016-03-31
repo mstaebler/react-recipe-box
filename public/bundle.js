@@ -64,6 +64,11 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var recipes = [{
+	  name: "Martini",
+	  ingredients: ["gin", "vermouth"]
+	}];
+
 	var CommentBox = function (_React$Component) {
 	  _inherits(CommentBox, _React$Component);
 
@@ -76,10 +81,52 @@
 	  _createClass(CommentBox, [{
 	    key: 'render',
 	    value: function render() {
+	      var recipeList = this.props.recipes.map(function (recipe) {
+	        return _react2.default.createElement(
+	          'div',
+	          { className: 'recipe' },
+	          _react2.default.createElement(
+	            'ul',
+	            null,
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              'Recipe:',
+	              _react2.default.createElement(
+	                'ul',
+	                null,
+	                _react2.default.createElement(
+	                  'li',
+	                  null,
+	                  recipe.name
+	                )
+	              )
+	            ),
+	            ' ',
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              'Ingredients:',
+	              _react2.default.createElement(
+	                'ul',
+	                null,
+	                recipe.ingredients.map(function (item) {
+	                  return _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    item
+	                  );
+	                })
+	              )
+	            )
+	          )
+	        );
+	      });
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'commentBox' },
-	        'Hello, world! I am a CommentBox.',
+	        'Recipe Box',
+	        recipeList,
 	        _react2.default.createElement(Box, null)
 	      );
 	    }
@@ -103,7 +150,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'box' },
-	        'Hello, world! I am a Box.'
+	        'Add Recipe'
 	      );
 	    }
 	  }]);
@@ -111,7 +158,7 @@
 	  return Box;
 	}(_react2.default.Component);
 
-	_reactDom2.default.render(_react2.default.createElement(CommentBox, null), document.getElementById('content'));
+	_reactDom2.default.render(_react2.default.createElement(CommentBox, { recipes: recipes }), document.getElementById('content'));
 
 /***/ },
 /* 1 */
