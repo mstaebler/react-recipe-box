@@ -69,16 +69,16 @@
 	  ingredients: ["gin", "vermouth"]
 	}];
 
-	var CommentBox = function (_React$Component) {
-	  _inherits(CommentBox, _React$Component);
+	var RecipeBox = function (_React$Component) {
+	  _inherits(RecipeBox, _React$Component);
 
-	  function CommentBox() {
-	    _classCallCheck(this, CommentBox);
+	  function RecipeBox() {
+	    _classCallCheck(this, RecipeBox);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CommentBox).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(RecipeBox).apply(this, arguments));
 	  }
 
-	  _createClass(CommentBox, [{
+	  _createClass(RecipeBox, [{
 	    key: 'render',
 	    value: function render() {
 	      var recipeList = this.props.recipes.map(function (recipe) {
@@ -124,41 +124,47 @@
 	      });
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'commentBox' },
+	        { className: 'recipeBox' },
 	        'Recipe Box',
 	        recipeList,
-	        _react2.default.createElement(Box, null)
+	        _react2.default.createElement(AddRecipe, null)
 	      );
 	    }
 	  }]);
 
-	  return CommentBox;
+	  return RecipeBox;
 	}(_react2.default.Component);
 
-	var Box = function (_React$Component2) {
-	  _inherits(Box, _React$Component2);
+	var AddRecipe = function (_React$Component2) {
+	  _inherits(AddRecipe, _React$Component2);
 
-	  function Box() {
-	    _classCallCheck(this, Box);
+	  function AddRecipe() {
+	    _classCallCheck(this, AddRecipe);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Box).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(AddRecipe).apply(this, arguments));
 	  }
 
-	  _createClass(Box, [{
+	  _createClass(AddRecipe, [{
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'box' },
-	        'Add Recipe'
+	        { className: 'addRecipe' },
+	        _react2.default.createElement(
+	          'button',
+	          null,
+	          'Add Recipe'
+	        ),
+	        _react2.default.createElement('input', { defaultValue: 'recipe name here' }),
+	        _react2.default.createElement('input', { defaultValue: 'ingredient1, ingredient2, ..' })
 	      );
 	    }
 	  }]);
 
-	  return Box;
+	  return AddRecipe;
 	}(_react2.default.Component);
 
-	_reactDom2.default.render(_react2.default.createElement(CommentBox, { recipes: recipes }), document.getElementById('content'));
+	_reactDom2.default.render(_react2.default.createElement(RecipeBox, { recipes: recipes }), document.getElementById('content'));
 
 /***/ },
 /* 1 */

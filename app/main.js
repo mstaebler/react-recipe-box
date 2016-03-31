@@ -8,7 +8,7 @@ var recipes = [
     }
 ];
 
-class CommentBox extends React.Component{
+class RecipeBox extends React.Component{
   render() {
       var recipeList = this.props.recipes.map((recipe)=>{
           return(
@@ -24,26 +24,28 @@ class CommentBox extends React.Component{
       );
       });
     return (
-      <div className="commentBox">
+      <div className="recipeBox">
         Recipe Box
         {recipeList}
-        <Box />
+        <AddRecipe />
       </div>
     );
   }
 }
 
-class Box extends React.Component{
+class AddRecipe extends React.Component{
   render() {
     return (
-      <div className="box">
-      Add Recipe
+      <div className="addRecipe">
+      <button>Add Recipe</button>
+      <input defaultValue="recipe name here"></input>
+      <input defaultValue="ingredient1, ingredient2, .."></input>
       </div>
     );
   }
 }
 
 ReactDOM.render(
-  <CommentBox recipes={recipes} />,
+  <RecipeBox recipes={recipes} />,
   document.getElementById('content')
 );
