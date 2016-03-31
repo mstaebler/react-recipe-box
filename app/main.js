@@ -34,10 +34,13 @@ class RecipeBox extends React.Component{
 }
 
 class AddRecipe extends React.Component{
+    handleClick : () =>{
+        
+    },
   render() {
     return (
       <div className="addRecipe">
-      <button>Add Recipe</button>
+      <button onClick={this.handleClick}>Add Recipe</button>
       <input defaultValue="recipe name here"></input>
       <input defaultValue="ingredient1, ingredient2, .."></input>
       </div>

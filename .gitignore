@@ -3,5 +3,5 @@ node_modules
 .sass_cache
 stylesheets
 style.css.map
-
+bundle.js
 *.scssc
