@@ -23,6 +23,7 @@ class RecipeBox extends React.Component{
           document.getElementById('content')
         );
     }
+    
     render() {
       var recipeList = this.props.recipes.map((recipe)=>{
           return(
@@ -52,6 +53,14 @@ class RecipeBox extends React.Component{
     );
   }
 }
+
+// class Recipe extends React.Component{
+//     render(){
+//         return(
+//
+//         );
+//     }
+// }
 
 ReactDOM.render(
   <RecipeBox recipes={recipes} name="recipe name" ingredients="ingredients" />,
