@@ -17,7 +17,7 @@ class RecipeBox extends React.Component{
             editID: null,
             vis : ["hide"]
         });
-        this.state = JSON.parse(localStorage.getItem('_recipe_store') || objString);
+        this.state = JSON.parse(localStorage.getItem('_recipestore') || objString);
 
     }
     handleChange(value, e){
@@ -40,7 +40,7 @@ class RecipeBox extends React.Component{
             input1:'',
             input2:''
         });
-        localStorage.setItem('_recipe_store', JSON.stringify(this.state));
+        localStorage.setItem('_recipestore', JSON.stringify(this.state));
         e.preventDefault();
     }
     delete(id, e){
@@ -49,6 +49,7 @@ class RecipeBox extends React.Component{
         this.setState({
             recipeArray: array
         });
+        localStorage.setItem('_recipestore', JSON.stringify(this.state));
     }
     edit(id, e){
         var recp = Object.assign({},this.state.recipeArray[id]);
@@ -57,6 +58,7 @@ class RecipeBox extends React.Component{
             input2:recp.ingredients,
             editID:id
         });
+        localStorage.setItem('_recipestore', JSON.stringify(this.state));
     }
     toggle(id,e){
         var arr = this.state.vis;
@@ -70,33 +72,33 @@ class RecipeBox extends React.Component{
           return(
               <div className="recipe">
                 <ul>
-                    <li><button onClick={this.edit.bind(this, recipe.id)}>edit</button></li>
-                    <li><button onClick={this.delete.bind(this, recipe.id)}>X</button></li>
-                    <li>Recipe:<a href='#' onClick={this.toggle.bind(this, recipe.id)}>{recipe.name}</a></li><li><div className={this.state.vis[recipe.id]}>Ingredients:<ul>{recipe.ingredients.map((item)=>{
+                    <li><button onClick={this.edit.bind(this, recipe.id)}>edit</button>
+                    <button onClick={this.delete.bind(this, recipe.id)}>X</button></li>
+                    <li><a href='#' onClick={this.toggle.bind(this, recipe.id)}>{recipe.name}</a></li><li><div className={this.state.vis[recipe.id]}>Ingredients:{recipe.ingredients.map((item)=>{
                         return (
-                            <li>{item}</li>
+                            <span>{item},</span>
                         );
-                    })}</ul></div></li>
+                    })}</div></li>
                 </ul>
               </div>
           );
         });
         return (
           <div className="recipeBox">
-            Recipe Box
+            <h1>Recipe Box</h1>
             {recipeList}
             <div className="addRecipe">
             <form onSubmit={this.submit.bind(this, this.state.editID)}>
-              <button>Submit Recipe</button>
-            </form>
             <input value={this.state.input1} placeholder={this.props.name} onChange={this.handleChange.bind(this, "name")} ></input>
             <input value={this.state.input2} placeholder={this.props.ingredients} onChange={this.handleChange.bind(this, "ingredients")} ></input>
+              <button>Submit</button>
+              </form>
             </div>
           </div>
     );
   }
 }
 ReactDOM.render(
-  <RecipeBox name="recipe name" ingredients="ingredients , seperated" />,
+  <RecipeBox name="recipe name" ingredients="ingredient,ingredient" />,
   document.getElementById('content')
 );
