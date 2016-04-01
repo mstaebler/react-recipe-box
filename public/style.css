@@ -1,5 +1,51 @@
+.wrapper {
+  background-image: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/school.png");
+  width: 80%;
+  min-height: 800px;
+  margin: 0 auto;
+  padding: 5%;
+  margin-top: 5%;
+  text-align: center;
+  text-shadow: 2px 2px 2px #CCCCCC; }
+
+.recipe {
+  padding-top: 10px;
+  float: top;
+  min-width: 150px;
+  min-height: 150px;
+  border-radius: 25%; }
+
+.recipeBox {
+  font-size: 200%;
+  padding-top: 35px; }
+
+input {
+  border-radius: 10%;
+  width: 200px;
+  height: 30px;
+  text-align: center;
+  font-size: 50%; }
+
+h1 {
+  font-family: Papyrus, fantasy;
+  font-size: 300%;
+  text-shadow: -1px -1px 1px #FFFFFF, 1px 1px 1px #000000; }
+
+button {
+  width: 75px;
+  height: 30px;
+  color: #C88588;
+  background-color: #AAC885;
+  border-radius: 30%;
+  font-size: 50%; }
+
 body {
-  color: blue; }
+  background-image: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/restaurant.png");
+  color: #C88588;
+  font: 100% "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif; }
+
+a {
+  color: #C88588; }
 
 .hide {
   display: none; }
@@ -9,5 +55,8 @@ body {
 
 ul {
   list-style-type: none; }
+
+button {
+  margin: 5px; }
 
 /*# sourceMappingURL=style.css.map */

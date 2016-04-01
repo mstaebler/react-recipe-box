@@ -1,14 +1,17 @@
 $primary-text-color: #C88588;
 $button-color: #AAC885;
-$font-stack: Helvetica, sans-serif;
+$font-stack: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+$h1-font: Papyrus, fantasy;
 
 .wrapper{
   background-image: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/school.png");
   width:80%;
   min-height:800px;
   margin: 0 auto;
+  padding:5%;
   margin-top:5%;
   text-align:center;
+  text-shadow: 2px 2px 2px #CCCCCC;
 }
 .recipe{
   padding-top:10px;
@@ -29,7 +32,11 @@ input{
   text-align:center;
   font-size:50%;
 }
-
+h1{
+  font-family: $h1-font;
+  font-size:300%;
+  text-shadow: -1px -1px 1px #FFFFFF, 1px 1px 1px #000000;
+}
 button{
   width:75px;
   height:30px;
@@ -42,20 +49,19 @@ body{
     background-image:url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/restaurant.png");
     color:$primary-text-color;
     font:100% $font-stack;
-
 }
 a{
-  text-decoration:none;
   color:$primary-text-color;
 }
 .hide {
-  display: none; }
-
+  display: none;
+}
 .show {
-  display: block; }
+  display: block;
+}
 ul{
   list-style-type: none;
 }
 button{
-  display: inline-block;
+  margin:5px;
 }
