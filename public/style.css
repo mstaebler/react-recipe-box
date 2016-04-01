@@ -1,4 +1,13 @@
 body {
   color: blue; }
 
+.hide {
+  display: none; }
+
+.show {
+  display: block; }
+
+ul {
+  list-style-type: none; }
+
 /*# sourceMappingURL=style.css.map */
