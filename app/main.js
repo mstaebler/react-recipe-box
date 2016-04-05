@@ -45,7 +45,16 @@ class RecipeBox extends React.Component{
     }
     delete(id, e){
         var array = this.state.recipeArray;
-        array.splice(id,1);
+        var findIndex = function(array){
+          for(var i = 0;i<array.length;i++){
+            if(array.i.id = id){
+            return i;
+            }
+          }
+          return 0;
+        }
+        array.splice(findIndex,1);
+
         this.setState({
             recipeArray: array
         });
